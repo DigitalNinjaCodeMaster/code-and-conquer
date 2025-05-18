@@ -1,1 +1,394 @@
+/* css/style.css */
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    background-color: #0d1117; /* A very dark blue-gray, like a space background */
+    color: #c9d1d9; /* Light gray text for good contrast on dark background */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold; /* Bold headings by default */
+}
+
+:root {
+    --color-primary-orange: #ff8c00; /* Example: DarkOrange - CHOOSE YOUR SHADE */
+    --color-primary-yellow: #ffd700; /* Example: Gold - CHOOSE YOUR SHADE */
+    --color-primary-yellow-rgb: 255, 215, 0; /* Gold (ffd700) as RGB for use in rgba() */
+    --color-primary-orange-rgb: 255, 140, 0; /* Orange (#ff8c00) as RGB */
+    --color-background-card-rgb: 22, 27, 34; /* RGB for #161b22 */
+    --color-accent-red: #dc3545;     /* Example: Bootstrap's danger red */
+    --color-accent-green: #28a745;   /* Example: Bootstrap's success green */
+    --color-text-light: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --color-background-dark: #0d1117;
+    --color-background-card: #161b22; /* Slightly lighter dark for cards/sections */
+}
+
+/* Helper class for our primary accent text color (e.g. gold/orange) */
+.text-themed-accent {
+    color: var(--color-primary-yellow); /* Defaulting to gold for now */
+}
+
+/* --- Navigation Bar Styling --- */
+#mainNav {
+    background-color: rgba(13, 17, 23, 0.85); /* Semi-transparent dark background */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border-bottom: 1px solid var(--color-primary-orange); /* Orange accent line */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+
+#mainNav .navbar-brand {
+    color: var(--color-primary-yellow); /* Gold for the brand */
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--color-text-light);
+    padding: 0.5em 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    color: var(--color-primary-orange);
+}
+
+#mainNav .navbar-nav .nav-item .btn-warning { 
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    color: var(--color-background-dark) !important; 
+    padding: 0.4rem 1rem;
+    margin-left: 0.5rem; 
+    font-weight: bold;
+}
+#mainNav .navbar-nav .nav-item .btn-warning:hover {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    padding-top: 10rem; 
+    padding-bottom: 6rem;
+    background: linear-gradient(to bottom, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 1) 100%), 
+                url('../images/IMG_0693.jpeg'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+    background-size: cover;
+    min-height: 100vh; 
+    display: flex; 
+}
+
+.hero-book-cover {
+    max-width: 300px; 
+    border: 5px solid var(--color-primary-yellow); 
+    border-radius: 10px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    color: var(--color-text-light);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-transform: uppercase; 
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-primary-yellow); 
+    font-weight: normal; 
+}
+
+.hero-author {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.hero-cta-button {
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    padding: 1.25rem 2.25rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--color-background-dark) !important; 
+    text-transform: uppercase; 
+}
+
+.hero-cta-button:hover {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important; 
+}
+
+/* --- About the Book Section Styling --- */
+.about-book-section {
+    background-color: var(--color-background-card); 
+    color: var(--color-text-light);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-yellow); 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-transform: uppercase; 
+}
+
+.divider {
+    height: 0.2rem;
+    max-width: 4rem; 
+    background-color: var(--color-primary-orange); 
+    border: none; 
+    opacity: 1; 
+}
+
+.synopsis-intro {
+    font-size: 1.20rem; 
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.synopsis-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-light); 
+    margin-bottom: 1.5rem;
+    text-align: justify; 
+}
+
+.synopsis-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Book Excerpt Section Styling --- */
+.book-excerpt-section {
+    background-color: var(--color-background-dark); 
+    color: var(--color-text-light);
+}
+
+.excerpt-content {
+    background-color: rgba(22, 27, 34, 0.5); 
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(var(--color-primary-yellow-rgb), 0.2); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.excerpt-content p {
+    font-family: 'Georgia', 'Times New Roman', Times, serif; 
+    font-size: 1.05rem; 
+    line-height: 1.8;
+    color: #e0e0e0; 
+    margin-bottom: 1.25em; 
+    text-align: justify;
+}
+
+.excerpt-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Author Section Styling --- */
+.author-section {
+    color: var(--color-text-light); 
+}
+
+.author-image {
+    max-width: 280px; 
+    border: 5px solid var(--color-primary-yellow); 
+}
+
+.author-name {
+    font-weight: 700; 
+}
+
+.author-bio-intro {
+    font-size: 1.2rem; 
+    color: var(--color-text-muted); 
+}
+
+.author-bio-full p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify; 
+    margin-bottom: 1rem;
+}
+
+.author-social-links .btn {
+    color: var(--color-primary-yellow); 
+    border-color: var(--color-primary-yellow); 
+    transition: all 0.3s ease-in-out;
+}
+
+.author-social-links .btn:hover {
+    background-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important; 
+    border-color: var(--color-primary-yellow);
+}
+
+.author-social-links .btn i {
+    font-size: 1.2rem; 
+}
+
+@media (max-width: 991.98px) { 
+    .author-image {
+        max-width: 220px; 
+        margin-bottom: 2rem; 
+    }
+    .author-name { 
+        font-size: 2.25rem; 
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .author-bio-full p {
+        text-align: left; 
+    }
+}
+
+/* --- The Experience Section Styling --- */
+.experience-item {
+    background-color: var(--color-background-card); 
+    border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.2); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    border-radius: 0.375rem; 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.experience-item:hover {
+    border-color: var(--color-primary-orange); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-orange-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.experience-item .experience-icon i {
+    font-size: 2.75rem; 
+    color: var(--color-primary-yellow); 
+    margin-bottom: 0.5rem; 
+    display: inline-block; 
+    transition: transform 0.3s ease-out;
+}
+
+.experience-item:hover .experience-icon i {
+    transform: scale(1.1); 
+}
+
+.experience-item h4 {
+    color: var(--color-text-light); 
+    font-weight: 600;
+    margin-bottom: 0.75rem !important; 
+}
+
+.experience-section .row.gy-4 > [class*="col-"] > .experience-item {
+    flex-grow: 1; 
+}
+
+/* --- DigiNinj Vision Section Styling --- */
+.vision-pillar {
+    background-color: var(--color-background-card); 
+    border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.15); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.vision-pillar:hover {
+    border-color: var(--color-primary-orange); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-orange-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.vision-pillar .vision-icon i {
+    color: var(--color-primary-yellow); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.vision-pillar:hover .vision-icon i {
+    transform: scale(1.1);
+}
+
+.vision-pillar h4 {
+    font-weight: 600;
+}
+
+.vision-section .row.gy-4 > [class*="col-"] { 
+    display: flex;
+}
+
+/* --- Buy Now Section Styling --- */
+.buy-now-section {
+    background-color: var(--color-background-card); 
+    color: var(--color-text-light);
+}
+
+.buy-now-section .section-heading {
+    color: var(--color-primary-yellow); 
+}
+
+.buy-option-card {
+    background-color: var(--color-background-dark); 
+    border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.25); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 0.375rem; 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.buy-option-card:hover {
+    border-color: var(--color-primary-orange); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-orange-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.buy-option-card h3 {
+    font-weight: 600;
+}
+
+.btn-buy-option {
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    color: var(--color-background-dark) !important; 
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-buy-option:hover,
+.btn-buy-option:focus {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important;
+    transform: translateY(-2px); /* Button itself can have a slight lift */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-buy-option i {
+    font-size: 1.1rem; 
+}
+
+/* --- Placeholder Section Styling (Basic) --- */
+/* Styles for sections that are still placeholders */
+/* All main content sections above are now styled */
+
+/* Ensuring Bootstrap's bg-dark uses our theme's card background for consistency */
+.bg-dark { 
+    background-color: var(--color-background-card) !important;
+}
+
+/* Placeholder style for the footer, can be expanded */
+footer.bg-black { 
+    background-color: #000000 !important; /* Pure black */
+}
