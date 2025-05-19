@@ -1,51 +1,52 @@
 /* css/style.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
-    background-color: #0d1117; /* A very dark blue-gray, like a space background */
-    color: #c9d1d9; /* Light gray text for good contrast on dark background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
     line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold; /* Bold headings by default */
+    font-weight: bold;
 }
 
 :root {
-    --color-primary-orange: #ff8c00; /* Example: DarkOrange - CHOOSE YOUR SHADE */
-    --color-primary-yellow: #ffd700; /* Example: Gold - CHOOSE YOUR SHADE */
-    --color-primary-yellow-rgb: 255, 215, 0; /* Gold (ffd700) as RGB for use in rgba() */
-    --color-primary-orange-rgb: 255, 140, 0; /* Orange (#ff8c00) as RGB */
-    --color-background-card-rgb: 22, 27, 34; /* RGB for #161b22 */
-    --color-accent-red: #dc3545;     /* Example: Bootstrap's danger red */
-    --color-accent-green: #28a745;   /* Example: Bootstrap's success green */
-    --color-text-light: #f8f9fa;
-    --color-text-muted: #adb5bd;
-    --color-background-dark: #0d1117;
-    --color-background-card: #161b22; /* Slightly lighter dark for cards/sections */
-    /* --- DigiNinj Green Variables - UPDATED --- */
+    --color-primary-orange: #ff8c00;
+    --color-primary-yellow: #ffd700;
+    --color-primary-yellow-rgb: 255, 215, 0;
+    --color-primary-orange-rgb: 255, 140, 0;
+    --color-background-card-rgb: 22, 27, 34;
+    
+    /* --- DigiNinj Green Variables --- */
     --color-digininj-green: #17cd4a;        /* Your actual logo green */
     --color-digininj-green-rgb: 23, 205, 74; /* RGB for your actual logo green */
     /* --- End DigiNinj Green Variables --- */
+
+    --color-accent-red: #dc3545;
+    --color-accent-green: #28a745; /* Default accent green, can differ from logo */
+    --color-text-light: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --color-background-dark: #0d1117;
+    --color-background-card: #161b22;
 }
 
-/* Helper class for our primary accent text color (e.g. gold/orange) */
-.text-themed-accent {
-    color: var(--color-primary-yellow); /* Defaulting to gold for now */
+.text-themed-accent { 
+    color: var(--color-primary-yellow);
 }
 
 /* --- Navigation Bar Styling --- */
 #mainNav {
-    background-color: rgba(13, 17, 23, 0.85); /* Semi-transparent dark background */
-    backdrop-filter: blur(5px); /* Frosted glass effect */
-    border-bottom: 1px solid var(--color-primary-orange); /* Orange accent line */
+    background-color: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--color-primary-orange);
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
 }
 
 #mainNav .navbar-brand {
-    color: var(--color-primary-yellow); /* Gold for the brand */
+    color: var(--color-primary-yellow);
     font-size: 1.5em;
     letter-spacing: 1px;
 }
@@ -138,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light);
 }
 
-.section-heading {
+.section-heading { 
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--color-primary-yellow); 
@@ -146,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase; 
 }
 
-.divider {
+.divider { 
     height: 0.2rem;
     max-width: 4rem; 
     background-color: var(--color-primary-orange); 
@@ -205,13 +206,12 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light); 
 }
 
-
 .author-image {
-    max-width: 280px; 
+    max-width: 320px; /* UPDATED: Increased from 280px */
     border: 5px solid var(--color-primary-yellow); 
 }
 
-.author-name {
+.author-name { 
     font-weight: 700; 
 }
 
@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991.98px) { 
     .author-image {
-        max-width: 220px; 
+        max-width: 250px; /* UPDATED: Increased from 220px */
         margin-bottom: 2rem; 
     }
     .author-name { 
@@ -260,6 +260,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- The Experience Section Styling --- */
+.experience-section .section-heading { 
+}
 .experience-item {
     background-color: var(--color-background-card); 
     border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.2); 
@@ -276,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-5px); 
 }
 
-.experience-item .experience-icon i {
+.experience-item .experience-icon i { 
     font-size: 2.75rem; 
     color: var(--color-primary-yellow); 
     margin-bottom: 0.5rem; 
@@ -299,11 +301,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- DigiNinj Vision Section Styling --- */
-/* --- Existing CSS for .vision-pillar needs to be updated like this --- */
-/* Make sure to find and replace the existing .vision-pillar styles */
+.vision-logo-aside {
+    max-width: 120px; 
+    height: auto;
+}
+/* This is for the centered logo layout */
+.vision-logo-below-heading {
+    max-width: 150px; 
+}
+
+
+.vision-heading-green { 
+    color: var(--color-digininj-green) !important; 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+}
+
+.vision-divider-custom { 
+    height: 0.2rem;
+    max-width: 4rem; 
+    background-color: var(--color-digininj-green); 
+    border: none; 
+    opacity: 1; 
+}
+
 .vision-pillar {
     background-color: var(--color-background-card); 
-    border: 2px solid rgba(var(--color-digininj-green-rgb), 0.25); /* Border uses new green */
+    border: 2px solid rgba(var(--color-digininj-green-rgb), 0.25); 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -312,65 +337,44 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vision-pillar:hover {
-    border-color: var(--color-digininj-green); /* Hover border uses new green */
-    box-shadow: 0 0 20px 5px rgba(var(--color-digininj-green-rgb), 0.4); /* Hover shadow uses new green */
+    border-color: var(--color-digininj-green); /* Changed from orange to green for vision section card hover */
+    box-shadow: 0 0 20px 5px rgba(var(--color-digininj-green-rgb), 0.4); 
     transform: translateY(-5px); 
 }
 
-/* --- NEW STYLES specific to DigiNinj Vision logo and green theme --- */
-.vision-logo-aside {
-    max-width: 120px; /* Adjust size as needed, can be a bit larger */
-    height: auto;
-}
-
-.vision-heading-green {
-    color: var(--color-digininj-green) !important; 
-    font-size: 2.5rem; /* from .section-heading */
-    text-transform: uppercase; /* from .section-heading */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Softer shadow for green text */
-}
-
-.vision-divider-custom { /* This replaces the global .divider for this section if you want different color/alignment */
-    height: 0.2rem;
-    max-width: 4rem; 
-    background-color: var(--color-digininj-green); /* Divider now green */
-    /* Or use var(--color-primary-orange) if you prefer the orange divider */
-    border: none; 
-    opacity: 1; 
-    /* mx-auto ms-md-0 already in HTML for alignment */
-}
-
-.vision-icon-green { /* Targets the icons specifically for green color */
+.vision-icon-green { 
     color: var(--color-digininj-green); 
     transition: transform 0.3s ease-in-out;
 }
 
-.vision-pillar:hover .vision-icon-green { /* Ensures icon within pillar scales on pillar hover */
+.vision-pillar:hover .vision-icon-green {
     transform: scale(1.1);
 }
 
-.vision-title-green { /* Targets the titles specifically for green color */
+.vision-title-green { 
     color: var(--color-digininj-green) !important; 
     font-weight: 600;
 }
 
-/* Responsive alignment for the header block containing logo and title */
-@media (min-width: 768px) { /* md breakpoint */
-    .vision-header-block .row {
-        /* text-align: left; This is handled by text-md-start in HTML */
-    }
-    .vision-divider-custom { /* Ensures divider aligns left on medium+ screens */
-        margin-left: 0; 
-        margin-right: auto; 
+.vision-section .row.gy-4 > [class*="col-"] { 
+    display: flex;
+}
+
+@media (min-width: 768px) { 
+    .vision-header-block.text-md-start .vision-divider-custom.mx-md-0 { /* For left-aligned divider on md+ */
+        margin-left: 0 !important;
+        margin-right: auto !important;
     }
 }
+
+
 /* --- Buy Now Section Styling --- */
 .buy-now-section {
     background-color: var(--color-background-card); 
     color: var(--color-text-light);
 }
 
-.buy-now-section .section-heading {
+.buy-now-section .section-heading { 
     color: var(--color-primary-yellow); 
 }
 
@@ -388,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-5px); 
 }
 
-.buy-option-card h3 {
+.buy-option-card h3 { 
     font-weight: 600;
 }
 
@@ -408,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--color-primary-yellow);
     border-color: var(--color-primary-yellow);
     color: var(--color-background-dark) !important;
-    transform: translateY(-2px); /* Button itself can have a slight lift */
+    transform: translateY(-2px); 
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
@@ -416,16 +420,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.1rem; 
 }
 
-/* --- Placeholder Section Styling (Basic) --- */
-/* Styles for sections that are still placeholders */
-/* All main content sections above are now styled */
-
-/* Ensuring Bootstrap's bg-dark uses our theme's card background for consistency */
+/* --- General Site Adjustments --- */
 .bg-dark { 
     background-color: var(--color-background-card) !important;
 }
 
-/* Placeholder style for the footer, can be expanded */
 footer.bg-black { 
-    background-color: #000000 !important; /* Pure black */
+    background-color: #000000 !important; 
 }
