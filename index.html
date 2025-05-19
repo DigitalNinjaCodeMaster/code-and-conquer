@@ -1,321 +1,425 @@
+/* css/style.css */
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code and Conquer (The Golden Compiler) by Roger Lawson II</title>
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+:root {
+    --color-primary-orange: #ff8c00;
+    --color-primary-yellow: #ffd700;
+    --color-primary-yellow-rgb: 255, 215, 0;
+    --color-primary-orange-rgb: 255, 140, 0;
+    --color-background-card-rgb: 22, 27, 34;
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    /* --- DigiNinj Green Variables --- */
+    --color-digininj-green: #17cd4a;        
+    --color-digininj-green-rgb: 23, 205, 74; 
+    /* --- End DigiNinj Green Variables --- */
 
-    <link rel="stylesheet" href="css/style.css">
+    --color-accent-red: #dc3545;
+    --color-accent-green: #28a745; 
+    --color-text-light: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --color-background-dark: #0d1117;
+    --color-background-card: #161b22;
+}
 
-</head>
-<body>
+.text-themed-accent { 
+    color: var(--color-primary-yellow);
+}
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Code & Conquer</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu <i class="bi bi-list"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="#about-book">About Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">The Experience</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#book-excerpt">Read Excerpt</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#author">Author</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#vision">DigiNinj Vision</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-warning text-dark btn-sm" href="#buy-now">Buy Now</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="hero-section text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <img class="img-fluid hero-book-cover mb-5 shadow-lg" src="images/IMG_0693.jpeg" alt="Code and Conquer Book Cover">
-            
-            <h1 class="hero-title text-uppercase mb-0">Code and Conquer</h1>
-            <h2 class="hero-subtitle lead mb-4">(The Golden Compiler)</h2>
-            <p class="hero-author mb-5">By Roger Lawson II</p>
-            
-            <a class="btn btn-xl hero-cta-button text-uppercase" href="#buy-now">
-                Unlock the Adventure - Buy Now <i class="bi bi-cart-check-fill ms-2"></i>
-            </a>
-        </div>
-    </header>
-    <section id="about-book" class="about-book-section py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-xl-8">
-                    <div class="text-center mb-5">
-                        <h2 class="section-heading text-uppercase">Enter the Golden Compiler Kingdom</h2>
-                        <hr class="divider my-4 mx-auto">
-                    </div>
-                    <p class="lead synopsis-intro">
-                        "Code And Conquer (The Golden Compiler)" plunges you into a universe where knowledge is power, and the very fabric of reality is intertwined with the language of machines.
-                    </p>
-                    <div class="synopsis-text">
-                        <p>Codey, the young king of the Golden Compiler Kingdom, is reluctantly stepping into power at a time when the stability of the code underlying time and space has been placed in jeopardy by the ambitions and irresponsibility of one mad AI genius. The actual and digital worlds meld and interact in this place outside our time and, in a twist, the power of AI becomes key to restraining and stabilizing the chaos unleashed through arrogance and ambition of one rogue genius.</p>
-                        <p>Codey navigates malicious, unstable codes and shifting unstable alliances as he struggles to understand the reach and effects of the disordered code that threatens the stability of his world and places his own family in peril. In the course of multiple challenges spread across space and time Codey and his allies reestablish stability in the kingdom and the digital world, but their incaution sets up an even greater adventure requiring brains, heart, commitment, and a sense of consequences.</p>
-                        <p>"Code and Conquer" tells the story of continuous struggle in a singular world where the digital and actual have combined, a universe where people can see code and interact with avatars. In this wide-open setting, our hero and his dragon travel through time in search of stability and continuity which is to be prized above all. In this world the fundamentals of an ordered ethics are as critical as ordered code. The world depends on it.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/* --- Navigation Bar Styling --- */
+#mainNav {
+    background-color: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--color-primary-orange);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+}
 
-    <section id="experience" class="experience-section py-5 bg-dark text-white">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-heading text-uppercase text-themed-accent">Unlock the Experience</h2>
-                <hr class="divider my-4 mx-auto">
-                <p class="lead text-white-50 col-lg-8 mx-auto">
-                    "Code and Conquer" is more than just a book; it's an immersive journey into a universe where logic reigns, algorithms come alive, and every line of code tells a story. Discover what awaits:
-                </p>
-            </div>
+#mainNav .navbar-brand {
+    color: var(--color-primary-yellow);
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
 
-            <div class="row gy-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="experience-item text-center p-4 h-100 rounded-3 w-100">
-                        <div class="experience-icon mb-3">
-                            <i class="bi bi-map-fill"></i>
-                        </div>
-                        <h4 class="mb-2">Venture into Vast Worlds</h4>
-                        <p class="text-white-50 mb-0">Explore the Golden Compiler Kingdom, a realm meticulously crafted where digital landscapes fuse with ancient lore, and every discovery propels the adventure.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="experience-item text-center p-4 h-100 rounded-3 w-100">
-                        <div class="experience-icon mb-3">
-                            <i class="bi bi-braces-asterisk"></i>
-                        </div>
-                        <h4 class="mb-2">Learn Through Story</h4>
-                        <p class="text-white-50 mb-0">Grasp foundational coding principles, from binary basics to the whispers of quantum mechanics, seamlessly woven into an epic narrative.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="experience-item text-center p-4 h-100 rounded-3 w-100">
-                        <div class="experience-icon mb-3">
-                            <i class="bi bi-shield-shaded"></i>
-                        </div>
-                        <h4 class="mb-2">Confront AI's Edge</h4>
-                        <p class="text-white-50 mb-0">Navigate the complex ethical quandaries of artificial intelligence as characters grapple with choices that could redefine their world.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="experience-item text-center p-4 h-100 rounded-3 w-100">
-                        <div class="experience-icon mb-3">
-                            <i class="bi bi-puzzle-fill"></i>
-                        </div>
-                        <h4 class="mb-2">Solve Intricate Puzzles</h4>
-                        <p class="text-white-50 mb-0">Engage your mind with challenges and mysteries that require logic, creativity, and an understanding of the code that underpins reality.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="experience-item text-center p-4 h-100 rounded-3 w-100">
-                        <div class="experience-icon mb-3">
-                            <i class="bi bi-compass"></i>
-                        </div>
-                        <h4 class="mb-2">Embark on a Grand Quest</h4>
-                        <p class="text-white-50 mb-0">Join King Codey on a high-stakes adventure filled with daring exploits, formidable foes, and the constant pursuit of knowledge and justice.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="book-excerpt" class="book-excerpt-section py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-xl-8">
-                    <div class="text-center mb-5">
-                        <h2 class="section-heading text-uppercase">Read a Sneak Peek</h2>
-                        <h3 class="text-themed-accent fw-normal h4">Chapter 1: The Lost Code</h3>
-                        <hr class="divider my-4 mx-auto">
-                    </div>
-                    <div class="excerpt-content">
-                        <p>Codey traced the ancient glyphs that writhed across the cavern walls, their meaning swirling in the flickering torchlight. The weight of the Golden Compiler Kingdom pressed heavily on his young shoulders, the recent loss of his father, King Arrin, a gaping wound in his heart. "These glyphs," he murmured, his voice echoing in the cavern's silence, "they speak of a power beyond anything I've ever encountered."</p>
-                        <p>ArraY, his majestic dragon companion, snorted softly, a plume of smoke curling from his nostrils. "Indeed, my King," ArraY rumbled, his voice deep and resonant. "They speak of the Lost Code, a power that could consume our kingdom if it fell into the wrong hands."</p>
-                        <p>Codey's gaze hardened with determination. "Then we must find it first. We must venture into the Quantum Realm of Cyberscream, no matter the cost."</p>
-                        <p>Cyberscream. The very name sent shivers down the spines of even the most seasoned coders in the Golden Compiler Kingdom. It was not just a place, it was a dimension – a chaotic, swirling vortex of raw data, broken code, and fragmented realities. Imagine a digital wasteland where discarded programs, corrupted files, and forgotten websites coalesced into a nightmarish landscape.</p>
-                        <p>It is said that Cyberscream was born from the echoes of the Great Dial-Up Crash, a cataclysmic event that nearly shattered the fabric of digital reality. When the Hadron Collider faltered for a mere second, it tore a rift between dimensions, sucking in a piece of this chaotic realm and depositing it within our world.</p>
-                        <p>Within Cyberscream, the laws of physics and logic are twisted beyond recognition. Code mutates and evolves at an alarming rate, giving rise to bizarre creatures and unpredictable phenomena. It is a place where viruses become living entities, firewalls manifest as impenetrable barriers, and even the most basic commands can have devastating consequences.</p>
-                        <p>But Cyberscream is not just a realm of chaos. It is also a repository of ancient knowledge, lost technologies, and powerful code fragments. Legend has it that the Lost Code, the key to unimaginable power, lies hidden somewhere within its depths. Many have ventured into Cyberscream, seeking its secrets or hoping to harness its power. Few have returned. Those who do often emerge changed, scarred by their experiences, their minds teetering on the brink of madness.</p>
-                        <p>It is a place to be feared, respected, and above all, avoided. But fate, it seems, has other plans for me.</p>
-                        <p>Suddenly, a high-pitched voice cut through the silence. "Did someone say Cyberscream? Oh, this is going to be fun!"</p>
-                        <p>A young girl, no older than Codey, materialized from the shadows, her form shimmering like a heat haze. Her mischievous grin and eyes that sparkled with mischief were a stark contrast to Codey's serious demeanor.</p>
-                        <p>"And who might you be?" Codey asked, his hand instinctively reaching for the Code of Wisdom, an ancient repository that hung around his neck, a royal heirloom that is bestowed to each new king and protector of the realm.</p>
-                        <p>"The name's Glitch," she chirped, "and I'm here to help... or maybe hinder. It depends on how things go."</p>
-                        <p>Before Codey could respond, another figure emerged from the shadows, this one tall and imposing. He moved with a quiet grace that belied his strength.</p>
-                        <p>"Glitch, always causing trouble," he sighed, his voice a low rumble. "I am Byte, and I apologize for my twin sister's... exuberance."</p>
-                        <p>Codey's mind raced. Twins? And they spoke of Cyberscream as if it were a playground. Who were these enigmatic digital figures, and what role did they play in the unfolding mystery of the Lost Code?</p>
-                        <p>"It used to be home."</p>
-                        <p>Codey's eyes widened, his grip tightening on the Code of Wisdom. "Your home?" he echoed, disbelief coloring his tone. "But Cyberscream... it's a realm of chaos, a place where the very fabric of reality unravels."</p>
-                        <p>Glitch giggled, a sound like wind chimes in a digital storm. "Oh, it's not so bad once you get used to it," she said, twirling a strand of her vibrantly colored hair. "Besides, it wasn't always
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="author" class="author-section py-5" style="background-color: var(--color-background-card);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-heading text-uppercase">Meet the Author</h2>
-                <hr class="divider my-4 mx-auto">
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                    <img src="images/IMG_0739.jpg" alt="Roger Lawson II" class="img-fluid rounded-circle author-image shadow-lg"> 
-                </div>
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h3 class="author-name display-5 text-themed-accent mb-3">Roger Lawson II</h3>
-                    <p class="lead author-bio-intro text-light mb-4">
-                        <em>Meet Roger Lawson II, the architect behind the Golden Compiler Kingdom and your guide through a universe where code shapes reality.</em>
-                    </p>
-                    <div class="author-bio-full text-light">
-                        <p>
-                            Born in Longview, TX, and raised in Golden, CO, Roger Lawson II (Age 43) is a multifaceted creator with a diverse range of passions. Among his many interests are cars, woodworking, ministry, painting, masonry, writing, theology, and philosophy &ndash; though this list is by no means exhaustive.
-                        </p>
-                        <p>
-                            He also dedicates a fair amount of time to intricate craft hobbies, including custom resin projects and the detailed construction of dollhouses, showcasing his meticulous nature and creative spirit.
-                        </p>
-                        <p>
-                            Currently, Roger's main professional focus is on building an immersive learning module based on the "Code And Conquer" universe, aiming to blend education with engaging storytelling.
-                        </p>
-                    </div>
-                    <div class="author-social-links mt-4">
-                        <a href="#" class="btn btn-outline-light me-2 py-2 px-3" target="_blank" rel="noopener noreferrer" title="Twitter">
-                            <i class="bi bi-twitter"></i> <span class="d-none d-md-inline">Twitter</span>
-                        </a>
-                        <a href="#" class="btn btn-outline-light me-2 py-2 px-3" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                            <i class="bi bi-linkedin"></i> <span class="d-none d-md-inline">LinkedIn</span>
-                        </a>
-                        <a href="#" class="btn btn-outline-light py-2 px-3" target="_blank" rel="noopener noreferrer" title="Personal Website">
-                            <i class="bi bi-globe"></i> <span class="d-none d-md-inline">Website</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--color-text-light);
+    padding: 0.5em 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase; 
+    font-size: 0.9rem; 
+}
 
-    <section id="vision" class="vision-section py-5 bg-dark text-light">
-        <div class="container">
-               <div class="vision-header-block text-center mb-5"> 
-                <h2 class="section-heading text-uppercase vision-heading-green mb-3">The DigiNinj Vision</h2>
-                <img src="images/digininjlogo.png" alt="DigiNinj Logo" class="vision-logo-below-heading img-fluid mb-4"> 
-                <hr class="divider vision-divider-custom mx-auto">
-                <p class="lead text-white-50 col-lg-10 mx-auto mt-4"> 
-                    In a world where knowledge is the ultimate power, we stand on the precipice of a new era in education. At DigiNinj, our mission is clear: to advocate for equal opportunities for all children and to support those with special needs through cutting-edge research and development.
-                </p>
-            </div>
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    color: var(--color-primary-orange);
+}
 
-            <div class="row gy-4 justify-content-center text-center">
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="vision-pillar p-4 h-100 w-100">
-                        <div class="vision-icon mb-3">
-                            <i class="bi bi-patch-question-fill vision-icon-green" style="font-size: 3rem;"></i>
-                        </div>
-                        <h4 class="h5 mb-2 vision-title-green">Relentless Pursuit of Wisdom</h4>
-                        <p class="text-white-50 small mb-0">
-                            We believe in questioning in the relentless pursuit of truth and wisdom. Our commitment is to challenge the status quo, to ask the hard questions, and to seek innovative solutions that transform the educational landscape.
-                        </p>
-                    </div>
-                </div>
+#mainNav .navbar-nav .nav-item .btn-warning { 
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    color: var(--color-background-dark) !important; 
+    padding: 0.4rem 1rem;
+    margin-left: 0.5rem; 
+    font-weight: bold;
+}
+#mainNav .navbar-nav .nav-item .btn-warning:hover {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+}
 
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="vision-pillar p-4 h-100 w-100">
-                        <div class="vision-icon mb-3">
-                            <i class="bi bi-robot vision-icon-green" style="font-size: 3rem;"></i>
-                        </div>
-                        <h4 class="h5 mb-2 vision-title-green">Empowering Through Immersive Learning</h4>
-                        <p class="text-white-50 small mb-0">
-                            We are dedicated to making a better tomorrow, today. Our interactive AI learning programs will inspire, engage, and entertain. Students will learn the art of coding while developing multiple critical skills, cultivating them as critical thinkers, visionary innovators, and compassionate leaders.
-                        </p>
-                    </div>
-                </div>
+/* --- Hero Section Styling --- */
+.hero-section {
+    padding-top: 10rem; 
+    padding-bottom: 6rem;
+    background: linear-gradient(to bottom, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 1) 100%), 
+                url('../images/IMG_0693.jpeg'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; 
+    background-size: cover;
+    min-height: 100vh; 
+    display: flex; 
+}
 
-                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-                    <div class="vision-pillar p-4 h-100 w-100">
-                        <div class="vision-icon mb-3">
-                            <i class="bi bi-people-fill vision-icon-green" style="font-size: 3rem;"></i>
-                        </div>
-                        <h4 class="h5 mb-2 vision-title-green">Building an Equitable Future</h4>
-                        <p class="text-white-50 small mb-0">
-                            We champion a world where every child has a choice, and education is a fundamental right, not a privilege. With honor, integrity, and a steadfast commitment to progress, we actively work to make this a reality.
-                        </p>
-                    </div>
-                </div>
-            </div>
+.hero-book-cover {
+    max-width: 300px; 
+    border: 5px solid var(--color-primary-yellow); 
+    border-radius: 10px;
+}
 
-            <div class="row justify-content-center mt-5">
-                <div class="col-lg-10 text-center">
-                    <h3 class="text-light h4">Introducing: <span class="vision-title-green">Code And Conquer</span></h3>
-                    <p class="text-white-50">
-                        We are just starting out and looking to incorporate <strong class="vision-title-green">CODE AND CONQUER</strong>, a new approach to learning coding from the birth of Binary into the future of Quantum Computing. It's a full immersive learning experience that teaches basic coding, cross-platform coding, AI ethics, and Information security with all the Bytes and Glitches.
-                    </p>
-                    <p class="lead text-light mt-4">
-                        Join us on this journey. Together, we will build a world where every child has the tools to succeed.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="buy-now" class="buy-now-section py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-heading text-uppercase">Get Your Copy Today!</h2>
-                <hr class="divider my-4 mx-auto">
-                <img src="images/IMG_0693.jpeg" alt="Code and Conquer Book Cover" class="img-fluid rounded shadow-lg my-4" style="max-width: 250px;">
-            </div>
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    color: var(--color-text-light);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    text-transform: uppercase; 
+}
 
-            <div class="row justify-content-center gy-4">
-                <div class="col-lg-5 col-md-8">
-                    <div class="buy-option-card h-100 p-4 rounded-3 text-center d-flex flex-column">
-                        <h3 class="text-themed-accent h4 mb-3">eBook Edition</h3>
-                        <p class="text-light small">Read "Code and Conquer" instantly on your favorite device. Available from these retailers:</p>
-                        <div class="mt-auto">
-                            <a href="https://www.amazon.com/CODE-CONQUER-Roger-Lawson-II-ebook/dp/B0F5Y7BZFY/ref=sr_1_1?crid=1MF95CITGOCZ&dib=eyJ2IjoiMSJ9.2L563x2reqiWlVhDGT6bURY3jwV4ya7bueYwSWD9Ykx-sEK8O6eziKinq6cSCOz40OoxtQxbSzuXeeyydoWx3jW6FXdG9N8hFgGM78gxrM4Tn8yULPFyBnMP0kTmhtUNxNCyzFzD2E55ZrF3mBgAmKhm2KKuvIgnn9rCU5AlgbWdL54oJ0venqVxAzRqVNfg5fMNpu5kgkW3tGzBGKPKJEayCAW5tFfLcKFe4C83nVQ.Fn7DRGHblbsMLEYAUWTBeq9RrcDdEY5ZBg6qftTDvZM&dib_tag=se&keywords=code+and+conquer&qid=1745968393&sprefix=code+and%2Caps%2C109&sr=8-1" class="btn btn-buy-option btn-block w-100 mb-2" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-amazon me-2"></i>Amazon Kindle
-                            </a>
-                            <a href="https://www.barnesandnoble.com/w/code-and-conquer-roger-lawson-ii/1147321584?ean=2940184413631" class="btn btn-buy-option btn-block w-100 mb-2" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-book-half me-2"></i>Barnes & Noble (Nook)
-                            </a>
-                            <a href="https://books.apple.com/us/book/code-and-conquer/id6744942475" class="btn btn-buy-option btn-block w-100" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-apple me-2"></i>Apple Books
-                            </a>
-                        </div>
-                    </div>
-                </div>
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-primary-yellow); 
+    font-weight: normal; 
+}
 
-                  <div class="col-lg-5 col-md-8">
-                    <div class="buy-option-card h-100 p-4 rounded-3 text-center d-flex flex-column">
-                        <h3 class="text-themed-accent h4 mb-3">Paperback Edition</h3>
-                        <p class="text-light small">Hold the adventure in your hands with a beautifully printed paperback copy.</p>
-                        <div class="mt-auto">
-                            <a href="https://www.amazon.com/Conquer-Golden-Compiler-Roger-Lawson/dp/B0F5STYR2D/ref=tmm_pap_swatch_0?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.2L563x2reqiWlVhDGT6bURY3jwV4ya7bueYwSWD9Ykx-sEK8O6eziKinq6cSCOz40OoxtQxbSzuXeeyydoWx3jW6FXdG9N8hFgGM78gxrM4Tn8yULPFyBnMP0kTmhtUNxNCyzFzD2E55ZrF3mBgAmKhm2KKuvIgnn9rCU5AlgbWdL54oJ0venqVxAzRqVNfg5fMNpu5kgkW3tGzBGKPKJEayCAW5tFfLcKFe4C83nVQ.Fn7DRGHblbsMLEYAUWTBeq9RrcDdEY5ZBg6qftTDvZM&qid=1745968393&sr=8-1" class="btn btn-buy-option btn-block w-100 mb-2" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-amazon me-2"></i>Buy on Amazon
-                            </a>
-                            <a href="https://www.xulonpress.com/bookstore/bookdetail.php?PB_ISBN=9798868515576&HC_ISBN=" class="btn btn-buy-option btn-block w-100" target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-building me-2"></i>Buy from Xulon Press
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="py-4 bg-black text-white-50">
-        <div class="container text-center">
-            <small>Copyright &copy; Code and Conquer 2025 </small>
-        </div>
-    </footer>
+.hero-author {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.hero-cta-button {
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    padding: 1.25rem 2.25rem;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--color-background-dark) !important; 
+    text-transform: uppercase; 
+}
+
+.hero-cta-button:hover {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important; 
+}
+
+/* --- About the Book Section Styling --- */
+.about-book-section {
+    background-color: var(--color-background-card); 
+    color: var(--color-text-light);
+}
+
+.section-heading { 
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-yellow); 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-transform: uppercase; 
+}
+
+.divider { 
+    height: 0.2rem;
+    max-width: 4rem; 
+    background-color: var(--color-primary-orange); 
+    border: none; 
+    opacity: 1; 
+}
+
+.synopsis-intro {
+    font-size: 1.20rem; 
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.synopsis-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-light); 
+    margin-bottom: 1.5rem;
+    text-align: justify; 
+}
+
+.synopsis-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Book Excerpt Section Styling --- */
+.book-excerpt-section {
+    background-color: var(--color-background-dark); 
+    color: var(--color-text-light);
+}
+
+.excerpt-content {
+    background-color: rgba(22, 27, 34, 0.5); 
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(var(--color-primary-yellow-rgb), 0.2); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.excerpt-content p {
+    font-family: 'Georgia', 'Times New Roman', Times, serif; 
+    font-size: 1.05rem; 
+    line-height: 1.8;
+    color: #e0e0e0; 
+    margin-bottom: 1.25em; 
+    text-align: justify;
+}
+
+.excerpt-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Author Section Styling --- */
+.author-section {
+    color: var(--color-text-light); 
+}
+
+.author-image {
+    max-width: 320px; /* UPDATED */
+    border: 5px solid var(--color-primary-yellow); 
+}
+
+.author-name { 
+    font-weight: 700; 
+}
+
+.author-bio-intro {
+    font-size: 1.2rem; 
+    color: var(--color-text-muted); 
+}
+
+.author-bio-full p {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify; 
+    margin-bottom: 1rem;
+}
+
+.author-social-links .btn {
+    color: var(--color-primary-yellow); 
+    border-color: var(--color-primary-yellow); 
+    transition: all 0.3s ease-in-out;
+}
+
+.author-social-links .btn:hover {
+    background-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important; 
+    border-color: var(--color-primary-yellow);
+}
+
+.author-social-links .btn i {
+    font-size: 1.2rem; 
+}
+
+@media (max-width: 991.98px) { 
+    .author-image {
+        max-width: 250px; /* UPDATED */
+        margin-bottom: 2rem; 
+    }
+    .author-name { 
+        font-size: 2.25rem; 
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .author-bio-full p {
+        text-align: left; 
+    }
+}
+
+/* --- The Experience Section Styling --- */
+.experience-section .section-heading { 
+}
+.experience-item {
+    background-color: var(--color-background-card); 
+    border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.2); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    border-radius: 0.375rem; 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.experience-item:hover {
+    border-color: var(--color-primary-orange); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-orange-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.experience-item .experience-icon i { 
+    font-size: 2.75rem; 
+    color: var(--color-primary-yellow); 
+    margin-bottom: 0.5rem; 
+    display: inline-block; 
+    transition: transform 0.3s ease-out;
+}
+
+.experience-item:hover .experience-icon i {
+    transform: scale(1.1); 
+}
+
+.experience-item h4 {
+    color: var(--color-text-light); 
+    font-weight: 600;
+    margin-bottom: 0.75rem !important; 
+}
+
+.experience-section .row.gy-4 > [class*="col-"] > .experience-item {
+    flex-grow: 1; 
+}
+
+/* --- DigiNinj Vision Section Styling --- */
+.vision-logo-below-heading { /* Renamed from vision-logo-aside for clarity */
+    max-width: 150px; 
+    height: auto;
+}
+
+.vision-heading-green { 
+    color: var(--color-digininj-green) !important; 
+    font-size: 2.5rem; 
+    text-transform: uppercase; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+}
+
+.vision-divider-custom { 
+    height: 0.2rem;
+    max-width: 4rem; 
+    background-color: var(--color-digininj-green); 
+    border: none; 
+    opacity: 1; 
+}
+
+.vision-pillar {
+    background-color: var(--color-background-card); 
+    border: 2px solid rgba(var(--color-digininj-green-rgb), 0.25); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex; 
+    flex-direction: column; 
+}
+
+.vision-pillar:hover {
+    border-color: var(--color-digininj-green); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-digininj-green-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.vision-icon-green { 
+    color: var(--color-digininj-green); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.vision-pillar:hover .vision-icon-green {
+    transform: scale(1.1);
+}
+
+.vision-title-green { 
+    color: var(--color-digininj-green) !important; 
+    font-weight: 600;
+}
+
+.vision-section .row.gy-4 > [class*="col-"] { 
+    display: flex;
+}
+
+@media (min-width: 768px) { 
+    .vision-header-block.text-md-start .vision-divider-custom.mx-md-0 { 
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+}
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>
+/* --- Buy Now Section Styling --- */
+.buy-now-section {
+    background-color: var(--color-background-card); 
+    color: var(--color-text-light);
+}
+
+.buy-now-section .section-heading { 
+    color: var(--color-primary-yellow); 
+}
+
+.buy-option-card {
+    background-color: var(--color-background-dark); 
+    border: 2px solid rgba(var(--color-primary-yellow-rgb), 0.25); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 0.375rem; 
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.buy-option-card:hover {
+    border-color: var(--color-primary-orange); 
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-orange-rgb), 0.4); 
+    transform: translateY(-5px); 
+}
+
+.buy-option-card h3 { 
+    font-weight: 600;
+}
+
+.btn-buy-option {
+    background-color: var(--color-primary-orange);
+    border-color: var(--color-primary-orange);
+    color: var(--color-background-dark) !important; 
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-buy-option:hover,
+.btn-buy-option:focus {
+    background-color: var(--color-primary-yellow);
+    border-color: var(--color-primary-yellow);
+    color: var(--color-background-dark) !important;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-buy-option i {
+    font-size: 1.1rem; 
+}
+
+/* --- General Site Adjustments --- */
+.bg-dark { 
+    background-color: var(--color-background-card) !important;
+}
+
+footer.bg-black { 
+    background-color: #000000 !important; 
+}
