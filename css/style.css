@@ -19,12 +19,12 @@ h1, h2, h3, h4, h5, h6 {
     --color-background-card-rgb: 22, 27, 34;
     
     /* --- DigiNinj Green Variables --- */
-    --color-digininj-green: #17cd4a;        
-    --color-digininj-green-rgb: 23, 205, 74; 
+    --color-digininj-green: #17cd4a;        /* Your actual logo green */
+    --color-digininj-green-rgb: 23, 205, 74; /* RGB for your actual logo green */
     /* --- End DigiNinj Green Variables --- */
 
     --color-accent-red: #dc3545;
-    --color-accent-green: #28a745; 
+    --color-accent-green: #28a745; /* Default accent green, can differ from logo */
     --color-text-light: #f8f9fa;
     --color-text-muted: #adb5bd;
     --color-background-dark: #0d1117;
@@ -207,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .author-image {
-    max-width: 320px; /* UPDATED for a larger image */
+    max-width: 320px; /* UPDATED: Increased from 280px */
     border: 5px solid var(--color-primary-yellow); 
 }
 
@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991.98px) { 
     .author-image {
-        max-width: 250px; /* UPDATED for a larger image on tablets */
+        max-width: 250px; /* UPDATED: Increased from 220px */
         margin-bottom: 2rem; 
     }
     .author-name { 
@@ -301,10 +301,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- DigiNinj Vision Section Styling --- */
-.vision-logo-below-heading {
-    max-width: 150px; 
+.vision-logo-aside {
+    max-width: 120px; 
     height: auto;
 }
+/* This is for the centered logo layout */
+.vision-logo-below-heading {
+    max-width: 150px; 
+}
+
 
 .vision-heading-green { 
     color: var(--color-digininj-green) !important; 
@@ -332,7 +337,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vision-pillar:hover {
-    border-color: var(--color-digininj-green); 
+    border-color: var(--color-digininj-green); /* Changed from orange to green for vision section card hover */
     box-shadow: 0 0 20px 5px rgba(var(--color-digininj-green-rgb), 0.4); 
     transform: translateY(-5px); 
 }
@@ -356,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) { 
-    .vision-header-block.text-md-start .vision-divider-custom.mx-md-0 { 
+    .vision-header-block.text-md-start .vision-divider-custom.mx-md-0 { /* For left-aligned divider on md+ */
         margin-left: 0 !important;
         margin-right: auto !important;
     }
